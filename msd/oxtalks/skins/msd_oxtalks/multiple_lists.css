@@ -1,0 +1,103 @@
+.vevent{
+border:0;
+}
+
+#seminar_feeds{
+background-color:#fff;		
+}
+
+.feed_seminar .startdate{
+color:#fff;
+background-color:#44687D;
+padding:3px 0 4px 5px;
+font-size:1em;
+font-weight:bolder;
+margin-top:20px;
+}
+
+.feed_seminar .discreet{
+margin:0;
+
+}
+
+.feed_seminar{
+clear:both;	
+padding-top:10px;
+padding-bottom:5px;
+border:1px solid white;
+font-size:0.9em;
+}
+
+.seminar_details{
+float:left;
+margin-left:10px;
+width:618px;
+}
+
+
+.starttime{
+width:60px;
+float:left;
+padding:5px 0 0 0;
+color:#742211;
+font-weight:bolder;
+}
+
+#seminar_feeds{
+margin:10px 0 10px 0;
+border-bottom:0px solid #eee;
+padding:0;
+} 
+
+.seminar_origin{
+color:#44687D;
+background-color:#fff;
+padding:3px 0 4px 0;
+}
+
+
+#seminar_feeds .description{
+padding:0;
+} 
+
+.feed_seminar h2{
+font-size:1em;
+padding-top:3px;
+margin:0;
+}
+
+.google_link_span,  .geo, 
+.map_link_span, #seminar_feeds .summary, .event_date_and_time_details, 
+.event_series_title, .event_enquiries_email_address, .description, .icalendar_link_label{
+display:none;
+}
+
+
+
+.icalendar_link_span a{
+float:left;
+display:block;
+background-image:url(ical-icon.png);
+margin-top:4px;
+width:28px;
+height:19px;
+margin-right:8px;
+border:0;
+}
+
+.location, .attendee{
+margin:0;
+}
+
+.location{
+color:#5d5d5d;
+display:block;
+}
+
+.attendee{
+font-weight:bold;
+}
+
+abbr, acronym {
+border:0;
+}

@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xml:lang="en" lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="seminar">
+<head>
+    <metal:fill_slot fill-slot="css_slot">
+        <link rel="stylesheet" type="text/css" href=""
+              tal:attributes="href string:${portal_url}/seminar.css" />
+    </metal:fill_slot>
+</head>
+<body>
+
+<div metal:fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+     <h1 class="documentFirstHeading" tal:content="structure view/title">
+         Feed Title
+     </h1>
+
+     <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+     <div tal:replace="structure provider:plone.abovecontentbody" />
+
+
+
+        <div id="feeds">
+            <a id="rss" href="RSS" i18n:translate="rss_subscribe">Subscribe to this series via RSS</a>
+            <a id="ics" href="ics_view" i18n:translate="ics_subscribe">Subscribe to this series via ICS</a>
+        </div>
+        
+<!--
+        <dl class="seminar_listing_details">
+            <tal:block condition="context/getLocation">
+                <dt i18n:translate="label_location">Location</dt>
+                <dd tal:content="context/getLocation">Oslo, Norway</dd>
+            </tal:block>
+
+            <tal:block condition="context/getOccurrence">
+                <dt i18n:translate="label_time">Time</dt>
+                <dd tal:content="context/getOccurrence">Mondays 10:00 to 11:00</dd>
+            </tal:block>
+
+            <dt i18n:translate="label_contact">Contact</dt>
+            <dd>
+                <a tal:condition="context/contactEmail"
+                   tal:attributes="href string:mailto:${context/contactEmail}"
+                   tal:content="context/contactName">John Doe</a> 
+                <span tal:condition="not:context/contactEmail"
+                   tal:replace="context/contactName">John Doe</span> 
+            </dd>
+        </dl>
+
+
+        <div class="notes" tal:condition="context/getNotes|nothing">
+            <div tal:replace="structure context/getNotes" />
+        </div>
+
+-->
+
+<tal:seminar repeat="seminar view/currententries">
+    <div class="seminar">
+<!--
+                 <div class="seminarCancelledText" tal:condition="seminar/cancelled">CANCELLED</div>
+-->
+      <div tal:content="seminar/fm_starttime" class="date">16/10/07</div>
+        <div class="download_event">
+                    
+            <a title="Add this item to your iCal calendar"
+                       i18n:attributes="title title_ical_feed"
+                       tal:attributes="href seminar/ical">
+                       <img title="vCal export" src="icon_export_ical.png"
+                             height="16" width="16"
+                             tal:attributes="src string:${portal_url}/icon_export_ical.png"/> iCal
+            </a>
+        </div>
+
+
+        <h2>
+                    <a tal:attributes="href seminar/link"
+                        tal:content="seminar/Title">
+                        The Evolution of the Social Brain
+                    </a>
+        </h2>
+
+                <div class="speaker"
+                    tal:content="seminar/speaker">
+                    Robin Dunbar (Prof of Evolutionary  Anthropology, and Director
+                    of the Institute of Cognitive &amp; Evolutionary Anthropology,  Oxford)
+                </div>
+                
+                <div class="time" i18n:translate="seminar_time_info">
+                    <span tal:replace="seminar/fm_starttime" i18n:name="start">10:00</span>
+                    to
+                    <span tal:replace="seminar/fm_endtime" i18n:name="end">12:00</span>.
+                </div>
+                <div class="location" tal:content="seminar/venue">
+                    The Radiology Department, JR
+                </div>
+ 
+                <p class="readmore">
+                    <a tal:attributes="href seminar/link">More information</a>
+                </p>
+            </div>
+        </tal:seminar>
+                <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+</div>
+
+</body>
+</html>

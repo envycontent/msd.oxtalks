@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+<metal:main fill-slot="main">
+
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+    <h1 class="documentFirstHeading" tal:content="structure view/title">
+        Feed Title
+    </h1>
+
+    <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+    <div tal:replace="structure provider:plone.abovecontentbody" />
+    
+   
+    <div id="seminar_feeds">
+    <tal:entry
+        tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime"
+        tal:repeat="entry view/currententries">
+    <div class="feed_seminar">
+    <div class="startdate" tal:condition="repeat/entry/first/fm_startdate">
+    <span  tal:content="entry/fm_startdate" >Start Date</span>
+    </div>
+   
+	
+	  <div class="starttime"><span tal:replace="entry/fm_starttime"> Start Time</span></div>
+      <div class="seminar_details">
+       <h2><a href="" tal:attributes="href entry/link; title entry/Title" tal:content="structure entry/Title"> </a></h2>
+
+        <div class="seminar_description">
+            <div class="vevent">
+                       <span class="icalendar_link_span">
+                        <a tal:attributes="href entry/ical" class="icalendar_link_url"><img alt="iCalendar link" title="iCalendar link" src="http://www.oucs.ox.ac.uk/images/icalendar.png" class="icalendar_link_label">
+                        </a>
+                        </span>
+
+                           <span class="attendee">
+                              <abbr title="X-SPEAKER" class="role" tal:content="entry/speaker">Professor Paul Digard</abbr>
+                           </span>
+
+                        <span class="location" tal:content="entry/venue">WIMM Seminar Room</span>
+                    </div>
+       
+    </div>
+</div>
+    </tal:entry>
+    
+
+    
+  </div>
+
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+</metal:main>
+</body>
+</html>
+

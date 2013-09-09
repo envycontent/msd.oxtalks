@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<object name="portal_skins">
+ <object name="msd_oxtalks"
+    meta_type="Filesystem Directory View"
+    directory="msd.oxtalks:skins/msd_oxtalks"/>
+ 
+ 
+  <skin-path name="*">
+  <layer name="msd_oxtalks"
+     insert-after="custom"/>
+  </skin-path>
+
+ 
+
+</object>

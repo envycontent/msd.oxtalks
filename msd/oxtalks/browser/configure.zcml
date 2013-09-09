@@ -1,0 +1,70 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="msd.oxtalks">
+
+  <include package="plone.app.contentmenu" />
+
+  <!-- -*- extra stuff goes here -*- -->
+  
+  <browser:page
+    for="msd.oxtalks.interfaces.IOxfordTalksList"
+    name="oxtalks_view"
+    class=".oxtalksview.oxtalksView"
+    template="oxtalksview.pt"
+    allowed_interface=".oxtalksview.IoxtalksView"
+    permission="zope.Public"
+  />
+  
+  <browser:page
+    for="msd.oxtalks.interfaces.IOxfordTalksList"
+    name="oxford_seminars"
+    class=".oxtalksview.oxtalksView"
+    template="multiple_listing.pt"
+    allowed_interface=".oxtalksview.IoxtalksView"
+    permission="zope.Public"
+  />
+  
+  <browser:page
+    for="msd.oxtalks.interfaces.IOxfordTalksList"
+    name="seminar_list"
+    class=".oxtalksview.oxtalksView"
+    template="single_listing.pt"
+    allowed_interface=".oxtalksview.IoxtalksView"
+    permission="zope.Public"
+  />
+  
+  <browser:page
+    for="msd.oxtalks.interfaces.IOxfordTalksList"
+    name="oxford_talks_list"
+    class=".oxtalksview.oxtalksView"
+    allowed_interface=".oxtalksview.IoxtalksView"
+    permission="zope.Public"
+  />
+  
+  <browser:menuItem 
+      for="msd.oxtalks.interfaces.IOxfordTalksList"
+      menu="plone_displayviews" 
+      title="List ID View" 
+      action="base_view" 
+      description="Shows the List ID and Title" 
+      />
+      
+  <browser:menuItem 
+      for="msd.oxtalks.interfaces.IOxfordTalksList"
+      menu="plone_displayviews" 
+      title="Multiple Seminar List" 
+      action="oxford_seminars" 
+      description="A display for multiple seminars on one day" 
+      />
+      
+  <browser:menuItem 
+      for="msd.oxtalks.interfaces.IOxfordTalksList"
+      menu="plone_displayviews" 
+      title="Seminar List" 
+      action="seminar_list" 
+      description="A display for a seminar list" 
+      />
+
+
+</configure>

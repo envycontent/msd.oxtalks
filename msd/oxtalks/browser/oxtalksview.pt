@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="msd.oxtalks">
+<body>
+	<metal:block fill-slot="top_slot" 
+	          tal:define="dummy python:request.set('disable_border',1)" /> 
+	
+    <div metal:fill-slot="main">
+        <tal:main-macro metal:define-macro="main"
+                        tal:define="testview view/test">
+                        
+        <tal:repeat repeat="item testview">
+                        
+            <h1 tal:content="item/Title"></h1>
+            <ul>
+            <li tal:content="structure item/description">test</li>
+            <li tal:content="item/speaker"></li>
+            <li tal:content="item/venue"></li>
+            <li tal:content="item/start_time"></li>
+            <li tal:content="item/end_time"></li>
+            </ul>
+         
+         </tal:repeat>   
+
+        </tal:main-macro>
+    </div>
+</body>
+</html>
