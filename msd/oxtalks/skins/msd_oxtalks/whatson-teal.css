@@ -1,0 +1,227 @@
+body {
+    font-family: "helvetica neue",helvetica,arial,sans-serif;
+    color: #1D3850;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 24px;
+    cursor: default;
+}
+
+body, html {
+    font-size: 13px;
+}
+
+
+hr {margin-top: 20px;margin-bottom: 20px;
+border-right: 0px none;
+border-width: 1px 0px 0px;
+border-style: solid none none;
+border-color: #EEE 
+-moz-use-text-color -moz-use-text-color;
+-moz-border-top-colors: none;
+-moz-border-right-colors: none;
+-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+border-image: none;}
+
+ul.list-unstyled { 
+margin-left: 0px;
+padding-left: 0px;
+list-style: outside none none;
+margin: 0.769231rem 0px 0.769231rem 0.769231rem;
+padding: 0px;
+ }
+
+ul.list-unstyled li {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.07692rem;
+    line-height: 1.84615rem;
+}
+
+ul.media {font-size: 1rem;
+line-height: 1.23077rem;
+list-style: outside none none;
+margin: 1.15385rem 0px;
+padding: 0px;
+font-weight: 400;
+font-style: normal;
+line-height: 24px;
+cursor: default; }
+
+
+ul.media-list {font-size: 1rem;
+line-height: 1.23077rem;
+list-style: outside none none;
+margin: 1.15385rem 0px;
+padding: 0px; }
+
+li.media { padding-top: 0px; margin-top: 0px;   }
+
+
+h3 {    
+    font-family: prenton-display,helvetica,arial,sans-serif;
+    font-size: 2.15385rem; 
+	 line-height: 1.4em; 
+	 margin: 0px;
+	 padding: 0px; 
+	 font-style: normal;
+	 font-weight: 100; 
+	 text-rendering: optimizelegibility;}
+	 
+h3.pull-left {margin-top: 0px;
+}
+
+.media > .pull-left {
+    margin-right: 10px;
+}
+.pull-left {
+    float: left !important;
+} 
+
+.details-date {color: #078085;
+font-size: 1.38462rem;
+font-weight: 200;}
+
+div.media-body {overflow: hidden; margin: 0px;
+padding: 0px;}
+
+
+*::-moz-selection {
+    background: none repeat scroll 0% 0% #FEFECA;
+}
+
+div.row {
+margin-left: -15px;
+margin-right: -15px;
+margin: 0px;
+padding: 0px;
+font-size: 1.07692rem;
+line-height: 1.84615rem;
+font-weight: 400;
+font-style: normal;
+}
+
+.row:after {
+    clear: both;
+}
+.row:after, .row:before {
+    content: " ";
+    display: table;
+}
+element {
+}
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, th, ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+div.col-xs-10 {width: 83.3333%; float: left; position: relative;
+min-height: 1px;
+padding-left: 15px;
+padding-right: 15px; margin: 0px;
+padding: 0px; font-size: 1.07692rem;
+line-height: 1.84615rem; }
+
+
+div.col-xs-2 {width: 16.6667%; float: left; position: relative;
+min-height: 1px;
+padding-left: 15px;
+padding-right: 15px; }
+
+.text-right {
+  text-align: right; margin: 0px;
+  padding: 0px; }
+
+h4.media-heading {
+font-size: 1.07692rem;
+font-weight: 600;
+color: #078085;
+text-transform: none;
+}
+
+h4.media-heading a:link {
+color: #078085;
+font-weight: 600;
+color: #078085;
+text-transform: none;
+text-decoration: none;
+}
+
+h4.media-heading a:active {
+color: #078085;
+font-weight: 600;
+color: #078085;
+text-transform: none;
+text-decoration: underline;
+}
+
+h4.media-heading a:visited {
+color: #078085;
+font-weight: 600;
+color: #078085;
+text-transform: none;
+text-decoration: none;
+}
+
+p.event-speaker {color: #078085;
+font-size: 0.923077rem;
+font-style: italic;
+font-weight: 600;
+line-height: 24px;
+}
+
+p.event-speaker a:link {
+color: #078085;
+font-size: 0.923077rem;
+font-style: italic;
+font-weight: 600;
+line-height: 24px;
+text-decoration: none;
+}
+
+p.event-speaker a:active {
+color: #078085;
+font-size: 0.923077rem;
+font-style: italic;
+font-weight: 600;
+line-height: 24px;
+text-decoration: underline;
+}
+
+p.event-speaker a:visited {
+color: #078085;
+font-size: 0.923077rem;
+font-style: italic;
+font-weight: 600;
+line-height: 24px;
+text-decoration: none;
+}
+
+p.details {color: #727295;
+font-size: 0.846154rem;
+line-height: 1.15385rem; }
+
+
+
+.glyphicon-calendar.icon-sm 
+{
+background-image: url(calendar-icon.jpg); 
+background-repeat: no-repeat; 
+display: inline-block;
+width: 30px;
+height: 30px;
+line-height: 30px;
+border-radius: 50%;
+text-align: center;
+font-size: 0.846154rem;
+}

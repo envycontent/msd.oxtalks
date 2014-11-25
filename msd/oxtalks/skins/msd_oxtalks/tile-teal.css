@@ -1,0 +1,159 @@
+body {
+    font-family: "helvetica neue",helvetica,arial,sans-serif;
+    color: #1D3850;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 24px;
+    cursor: default;
+}
+
+body, html {
+    font-size: 13px;
+}
+
+ul.media-list {
+    font-size: 1rem;
+    line-height: 1.23077rem;
+    list-style: outside none none;
+    margin: 1.15385rem 0;
+    padding: 0;
+}
+
+ul.media-list li.media:after, 
+ul.media-list li.media:before, 
+ul.media-list li:after, 
+ul.media-list li:before {
+    content: " ";
+    display: table;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+li.media {border-bottom: 1px solid #DFE1E4;
+display: block;
+overflow: hidden;
+padding: 0.538462rem 0px;}
+
+div.row {
+margin-right: -15px;
+margin-top: 5px;
+margin-bottom: -10px;
+font-size: 1.07692rem;
+line-height: 1.84615rem;
+font-weight: 400;
+font-style: normal;
+}
+
+.row:after {
+    clear: both;
+}
+.row:after, .row:before {
+    content: " ";
+    display: table;
+}
+
+
+div.col-xs-10 {width: 83.3333%; float: left; position: relative;
+min-height: 1px;
+padding-left: 15px;
+padding-right: 15px;
+margin: 0px;
+padding: 0px; 
+font-size: 1.07692rem;
+line-height: 1.84615rem; }
+
+div.col-xs-2 {width: 16.6667%; 
+float: left; 
+position: relative;
+min-height: 1px;
+padding-top: 15px;
+padding-left: 15px;
+padding-right: 15px;
+padding-bottom: 10px;
+ }
+
+
+h4.media-heading {
+font-size: 1.07692rem;
+font-weight: 600;
+color: #078085;
+text-transform: none;
+}
+
+h4.media-heading a:link {
+color: #078085;
+font-weight: 600;
+color: #078085;
+text-transform: none;
+text-decoration: none;
+}
+
+h4.media-heading a:active {
+color: #078085;
+font-weight: 600;
+color: #078085;
+text-transform: none;
+text-decoration: underline;
+}
+
+h4.media-heading a:visited {
+color: #078085;
+font-weight: 600;
+color: #078085;
+text-transform: none;
+text-decoration: none;
+}
+
+p.event-speaker {color: #078085;
+font-size: 0.923077rem;
+font-style: italic;
+font-weight: 400;
+line-height: 24px;
+}
+
+p.event-speaker a:link {
+color: #078085;
+font-size: 0.923077rem;
+font-style: italic;
+font-weight: 400;
+line-height: 24px;
+text-decoration: none;
+}
+
+p.event-speaker a:active {
+color: #078085;
+font-size: 0.923077rem;
+font-style: italic;
+font-weight: 400;
+line-height: 24px;
+text-decoration: underline;
+}
+
+p.event-speaker a:visited {
+color: #078085;
+font-size: 0.923077rem;
+font-style: italic;
+font-weight: 400;
+line-height: 24px;
+text-decoration: none;
+}
+
+p.details {color: #727295;
+font-size: 0.846154rem;
+line-height: 1.15385rem;
+}
+
+
+a.calendar {
+background-image: url("calendar-icon.jpg"); 
+background-repeat: no-repeat; 
+display: inline-block;
+width: 30px;
+height: 30px;
+line-height: 30px;
+border-radius: 50%;
+text-align: center;
+font-size: 0.846154rem;
+}

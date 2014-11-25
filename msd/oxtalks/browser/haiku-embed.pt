@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      i18n:domain="plone">
+<head>
+<link href="tile-teal.css" tal:attributes="href python:'tile-%s.css' %(context.styleSheet)" media="screen" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <ul tal:condition="view/currententries" class="media-list">
+    <tal:entry
+        tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime"
+        tal:repeat="entry view/currententries">
+        <li class="media">
+              
+       <div class="media-body">
+                  <div class="row">
+                    <div class="col-xs-10">
+                      <h4 class="media-heading">        
+              
+             
+                    <a href="http://www.medsci.ox.ac.uk" tal:content="entry/Title" tal:attributes="href entry/link; title entry/Title">Metastatic Cascade - Macrophages Lead the Way</a>
+                  </h4>
+              </div>
+               <div class="col-xs-2 text-right">
+                              <a href="http://www.medsci.ox.ac.uk" tal:attributes="href entry/ical" class="calendar" title="Add this talk to your calendar"></a>
+             
+                             </div>
+                </div>
+              <p class="event-speaker">
+                  <a href="http://www.medsci.ox.ac.uk" tal:attributes="href entry/link; title entry/Title">
+                      <span tal:content="entry/speaker">Professor Jeffrey Pollard, Director, MRC Centre for Reproductive Health, University of Edinburgh</span>
+                  </a>
+              </p>
+              <p class="details">
+                  <span tal:replace="entry/fm_starttime">Start Time</span>
+
+                      @ <span class="location" tal:replace="entry/venue">WIMM Seminar Room</span>
+
+              </p>
+             
+        </li>
+
+      </tal:entry>
+      </ul> 
+      <div tal:condition="not: view/currententries">Waiting for Oxford Talks</div>
+
+</body>
+</html>
+
