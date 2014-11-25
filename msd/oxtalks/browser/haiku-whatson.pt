@@ -56,7 +56,11 @@
             </ul>
         </li>
     </ul>
-    <div tal:condition="not: view/currententries">Waiting for Oxford Talks</div>
+    <p class='indent'>
+        <a class="btn btn-primary" target="new" href="http://www.ox.ac.uk" tal:attributes="href python:'http://talks.ox.ac.uk/show/index/%s' %(context.listID)">More Talks
+        </a>
+    </p>
+    <div class="waiting" tal:condition="not: view/currententries">Waiting for Oxford Talks</div>
     
 </body>
 </html>

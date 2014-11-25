@@ -20,7 +20,7 @@
                       <h4 class="media-heading">        
               
              
-                    <a href="http://www.medsci.ox.ac.uk" tal:content="entry/Title" tal:attributes="href entry/link; title entry/Title">Metastatic Cascade - Macrophages Lead the Way</a>
+                    <a href="http://www.medsci.ox.ac.uk" target="new" tal:content="entry/Title" tal:attributes="href entry/link; title entry/Title">Metastatic Cascade - Macrophages Lead the Way</a>
                   </h4>
               </div>
                <div class="col-xs-2 text-right">
@@ -29,7 +29,7 @@
                              </div>
                 </div>
               <p class="event-speaker">
-                  <a href="http://www.medsci.ox.ac.uk" tal:attributes="href entry/link; title entry/Title">
+                  <a href="http://www.medsci.ox.ac.uk" target="new" tal:attributes="href entry/link; title entry/Title">
                       <span tal:content="entry/speaker">Professor Jeffrey Pollard, Director, MRC Centre for Reproductive Health, University of Edinburgh</span>
                   </a>
               </p>
@@ -43,8 +43,12 @@
         </li>
 
       </tal:entry>
-      </ul> 
-      <div tal:condition="not: view/currententries">Waiting for Oxford Talks</div>
+      </ul>
+      <p class='indent'>
+          <a class="btn btn-primary" target="new" href="http://www.ox.ac.uk" tal:attributes="href python:'http://talks.ox.ac.uk/show/index/%s' %(context.listID)">More Talks
+          </a>
+      </p>
+      <div class="waiting" tal:condition="not: view/currententries">Waiting for Oxford Talks</div>
 
 </body>
 </html>
