@@ -27,6 +27,28 @@ OxfordTalksListSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
         required=True,
         default=_(u"4427"),
     ),
+    
+    atapi.StringField(
+        'limitNum',
+        storage=atapi.AnnotationStorage(),
+        widget=atapi.StringWidget(
+            label=_(u"Limit"),
+            description=_(u"Enter the number of items to show"),
+        ),
+        required=True,
+        default=_(u"10"),
+    ),
+    
+    atapi.StringField(
+        'styleSheet',
+        storage=atapi.AnnotationStorage(),
+        widget=atapi.StringWidget(
+            label=_(u"Stylesheet"),
+            description=_(u"Enter the name of your stylesheet"),
+        ),
+        required=True,
+        default=_(u"teal"),
+    ),
 
 
 ))
@@ -52,6 +74,9 @@ class OxfordTalksList(base.ATCTContent):
 
     # -*- Your ATSchema to Python Property Bridges Here ... -*-
     listID = atapi.ATFieldProperty('listID')
+    limitNum = atapi.ATFieldProperty('limitNum')
+    styleSheet = atapi.ATFieldProperty('styleSheet')
+    
 
 
 atapi.registerType(OxfordTalksList, PROJECTNAME)

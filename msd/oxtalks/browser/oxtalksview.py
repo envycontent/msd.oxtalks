@@ -37,11 +37,21 @@ class oxtalksView(BrowserView):
     def getResults(self):
         
         listID = self.context['listID']
+        limitNum = self.context['limitNum']
         
-        request_string = 'http://talks.ox.ac.uk/show/json/%s' %(listID)
+        request_string = 'http://talks.ox.ac.uk/show/json/%s?limit=%s' %(listID,limitNum)
         
-        conn = requests.get(request_string)
-        rsp = conn.json()
+        try:
+            conn = requests.get(request_string, timeout=9)   
+        except requests.exceptions.ConnectionError:
+            conn = None
+        except requests.exceptions.Timeout:
+            conn = None
+        
+        if conn is not None:
+            rsp = conn.json()
+        else:
+            rsp = None
         
         return rsp
 
@@ -53,6 +63,7 @@ class oxtalksView(BrowserView):
     def portal(self):
         return getToolByName(self.context, 'portal_url').getPortalObject()
 
+    
     def currententries(self):
         """
         test method
@@ -61,49 +72,55 @@ class oxtalksView(BrowserView):
         results_set = self.getResults()
         allItems = []
         
-        for x in results_set:
-            description = x.get('abstract_filtered','')
-            Title = x.get('title')
-            if x.get('venue'):
-                place_array = x.get('venue','')
-                venue = place_array.get('name','')
-            else:
-                venue = ""
-            if x.get('series'):
-                series_array = x.get('series','')
-                series = place_array.get('name','')
-            else:
-                series = ""
-            talk_id = x.get('id','')
-            series_id = x.get('series_id')
-            speaker = x.get('name_of_speaker','')
-            start_time = x.get('start_time','')
-            end_time = x.get('end_time','')
-            special_message = x.get('special_message','')
-            fm_startdate = DateTime(start_time).strftime('%A, %d %B, %Y').replace(', 0',', ')
-            fm_starttime = DateTime(start_time).strftime('%I.%M %p').strip('0')
-            fm_endtime = DateTime(end_time).strftime('%I.%M %p').strip('0')
-            link = "http://talks.ox.ac.uk/talk/index/%s" %(talk_id)
-            ical = "http://talks.ox.ac.uk/talk/vcal/%s" %(talk_id)
+        if results_set is not None:
+        
+            for x in results_set:
+                description = x.get('abstract_filtered','')
+                Title = x.get('title')
+                if x.get('venue'):
+                    place_array = x.get('venue','')
+                    venue = place_array.get('name','')
+                else:
+                    venue = ""
+                if x.get('series'):
+                    series_array = x.get('series','')
+                    series = place_array.get('name','')
+                else:
+                    series = ""
+                talk_id = x.get('id','')
+                series_id = x.get('series_id')
+                speaker = x.get('name_of_speaker','')
+                start_time = x.get('start_time','')
+                end_time = x.get('end_time','')
+                special_message = x.get('special_message','')
+                fm_startdate = DateTime(start_time).strftime('%A, %d %B %Y').replace(', 0',', ')
+                fm_starttime = DateTime(start_time).strftime('%I:%M%p').strip('0').replace(':00','').lower()
+                fm_endtime = DateTime(end_time).strftime('%I:%M%p').strip('0')
+                fm_startday = DateTime(start_time).strftime('%d').strip('0')
+                fm_startmonth = DateTime(start_time).strftime('%B %Y')
+                link = "http://talks.ox.ac.uk/talk/index/%s" %(talk_id)
+                ical = "http://talks.ox.ac.uk/talk/vcal/%s" %(talk_id)
 
-            allItems.append({'description': description,
-                'Title': Title,
-                'speaker': speaker,
-                'venue': venue,
-                'series': series,
-                'series_id': series_id,
-                'talk_id': talk_id,
-                'ical': ical,
-                'link': link,
-                'start_time': start_time,
-                'end_time': end_time,
-                'special_message': special_message,
-                'fm_startdate': fm_startdate,
-                'fm_starttime': fm_starttime,
-                'fm_endtime': fm_endtime,})
+                allItems.append({'description': description,
+                    'Title': Title,
+                    'speaker': speaker,
+                    'venue': venue,
+                    'series': series,
+                    'series_id': series_id,
+                    'talk_id': talk_id,
+                    'ical': ical,
+                    'link': link,
+                    'start_time': start_time,
+                    'end_time': end_time,
+                    'special_message': special_message,
+                    'fm_startdate': fm_startdate,
+                    'fm_starttime': fm_starttime,
+                    'fm_startday': fm_startday,
+                    'fm_startmonth': fm_startmonth,
+                    'fm_endtime': fm_endtime,})
                 
                             
                             
-        allItems.sort(key=lambda x: x["start_time"], reverse=False)
+            allItems.sort(key=lambda x: x["start_time"], reverse=False)
                 
         return allItems

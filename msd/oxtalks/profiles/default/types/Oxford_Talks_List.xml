@@ -17,6 +17,8 @@
   <property name="view_methods">
     <element value="base_view"/>
     <element value="oxford_seminars"/>
+    <element value="haiku_tile" />
+    <element value="haiku_whatson" />
   </property>
   <alias from="(Default)" to="(dynamic view)" />
   <alias from="edit" to="atct_edit" />

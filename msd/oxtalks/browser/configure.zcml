@@ -27,6 +27,24 @@
   
   <browser:page
     for="msd.oxtalks.interfaces.IOxfordTalksList"
+    name="haiku_tile"
+    class=".oxtalksview.oxtalksView"
+    template="haiku-embed.pt"
+    allowed_interface=".oxtalksview.IoxtalksView"
+    permission="zope.Public"
+  />
+  
+  <browser:page
+    for="msd.oxtalks.interfaces.IOxfordTalksList"
+    name="haiku_whatson"
+    class=".oxtalksview.oxtalksView"
+    template="haiku-whatson.pt"
+    allowed_interface=".oxtalksview.IoxtalksView"
+    permission="zope.Public"
+  />
+  
+  <browser:page
+    for="msd.oxtalks.interfaces.IOxfordTalksList"
     name="seminar_list"
     class=".oxtalksview.oxtalksView"
     template="single_listing.pt"
@@ -56,6 +74,22 @@
       title="Multiple Seminar List" 
       action="oxford_seminars" 
       description="A display for multiple seminars on one day" 
+      />
+      
+  <browser:menuItem 
+      for="msd.oxtalks.interfaces.IOxfordTalksList"
+      menu="plone_displayviews" 
+      title="Haiku Tile" 
+      action="haiku_tile" 
+      description="Haiku cover page tile" 
+      />
+      
+  <browser:menuItem 
+      for="msd.oxtalks.interfaces.IOxfordTalksList"
+      menu="plone_displayviews" 
+      title="Haiku What's On" 
+      action="haiku_whatson" 
+      description="Haiku What's On IFrame" 
       />
       
   <browser:menuItem 

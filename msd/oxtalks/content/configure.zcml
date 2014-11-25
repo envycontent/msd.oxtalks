@@ -1,6 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="msd.oxtalks">
 
   <!-- configure your content components here -->
@@ -12,5 +13,6 @@
         interface="..interfaces.IOxfordTalksList"
         />
   </class>
+  
 
 </configure>
