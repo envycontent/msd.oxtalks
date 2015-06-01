@@ -13,6 +13,13 @@
         interface="..interfaces.IOxfordTalksList"
         />
   </class>
+
+  <class class=".oxfordtalkscollection.OxfordTalksCollection">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IOxfordTalksCollection"
+        />
+  </class>
   
 
 </configure>

@@ -44,6 +44,16 @@
   />
   
   <browser:page
+    for="msd.oxtalks.interfaces.IOxfordTalksCollection"
+    name="new_haiku_whatson"
+    class=".oxtalkscollection.oxtalksCollection"
+    template="new-haiku-whatson.pt"
+    allowed_interface=".oxtalkscollection.IoxtalksCollection"
+    permission="zope.Public"
+  />
+  
+  
+  <browser:page
     for="msd.oxtalks.interfaces.IOxfordTalksList"
     name="seminar_list"
     class=".oxtalksview.oxtalksView"

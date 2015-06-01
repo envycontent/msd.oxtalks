@@ -11,5 +11,6 @@
   <factorytypes>
     <!-- -*- extra stuff goes here -*- -->
     <type portal_type="Oxford Talks List" />
+    <type portal_type="Oxford Talks Collection" />
   </factorytypes>
 </object>
