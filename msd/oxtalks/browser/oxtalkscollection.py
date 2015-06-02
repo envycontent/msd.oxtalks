@@ -101,18 +101,24 @@ class oxtalksCollection(BrowserView):
                 else:
                     series = ""
                 talk_id = x.get('slug','')
-                speaker = ""
-                if x.get('speakers'):
-                    for entry in x.get('speakers',''):
-                        speaker = speaker + entry['name']
+                talk_link = 'http://new.talks.ox.ac.uk/talks/id/%s' % talk_id
+                speakers_list = []
+                speaker = ''
+                
+                for entry in x['_embedded']['speakers']:
+                    speakers_list.append ((entry['name'] + ', ' + entry['bio']).rstrip(', '))
+                
+                speaker = '; '.join(speakers_list)
+                    
                 start_time = x.get('start','')
                 end_time = x.get('end','')
                 special_message = x.get('special_message','')
                 fm_startdate = datetime.strptime(start_time,'%Y-%m-%dT%H:%M:%SZ').strftime('%A, %d %B %Y').replace(', 0',', ')
                 fm_starttime = datetime.strptime(start_time,'%Y-%m-%dT%H:%M:%SZ').strftime('%I:%M%p').strip('0').replace(':00','').lower()
                 fm_endtime = datetime.strptime(end_time,'%Y-%m-%dT%H:%M:%SZ').strftime('%I:%M%p').strip('0')
-                fm_startday = datetime.strptime(start_time,'%Y-%m-%dT%H:%M:%SZ').strftime('%d').strip('0')
+                fm_startday = datetime.strptime(start_time,'%Y-%m-%dT%H:%M:%SZ').strftime('%d').lstrip('0')
                 fm_startmonth = datetime.strptime(start_time,'%Y-%m-%dT%H:%M:%SZ').strftime('%B %Y')
+                
                 
 
                 allItems.append({'description': description,
@@ -129,7 +135,8 @@ class oxtalksCollection(BrowserView):
                     'fm_starttime': fm_starttime,
                     'fm_startday': fm_startday,
                     'fm_startmonth': fm_startmonth,
-                    'fm_endtime': fm_endtime,})
+                    'fm_endtime': fm_endtime,
+                    'talk_link': talk_link,})
                 
                             
                             

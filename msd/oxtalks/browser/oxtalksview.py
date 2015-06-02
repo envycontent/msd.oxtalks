@@ -96,7 +96,7 @@ class oxtalksView(BrowserView):
                 fm_startdate = DateTime(start_time).strftime('%A, %d %B %Y').replace(', 0',', ')
                 fm_starttime = DateTime(start_time).strftime('%I:%M%p').strip('0').replace(':00','').lower()
                 fm_endtime = DateTime(end_time).strftime('%I:%M%p').strip('0')
-                fm_startday = DateTime(start_time).strftime('%d').strip('0')
+                fm_startday = DateTime(start_time).strftime('%d').lstrip('0')
                 fm_startmonth = DateTime(start_time).strftime('%B %Y')
                 link = "http://talks.ox.ac.uk/talk/index/%s" %(talk_id)
                 ical = "http://talks.ox.ac.uk/talk/vcal/%s" %(talk_id)

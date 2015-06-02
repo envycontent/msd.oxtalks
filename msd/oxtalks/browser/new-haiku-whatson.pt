@@ -26,7 +26,7 @@
                     <div class="row">
                       <div class="col-xs-10">
                         <h4 class="media-heading">
-                          <a class="state-published" href="" target="new" tal:attributes="title entry/Title" tal:content="structure entry/Title">
+                          <a class="state-published" href="" target="new" tal:attributes="href entry/talk_link; title entry/Title" tal:content="structure entry/Title">
                               Metastatic Cascade - Macrophages Lead the Way
                           </a>
                         </h4>
@@ -40,7 +40,7 @@
                       </div>
                   </div>
                   <p class="event-speaker">
-                      <a class="state-published" title="" href="" target="new" tal:attributes="title entry/speaker">
+                      <a class="state-published" title="" href="" target="new" tal:attributes="href entry/talk_link; title entry/speaker">
                         <span tal:content="entry/speaker">Professor Jeffrey Pollard, Director, MRC Centre for Reproductive Health, University of Edinburgh</span>
                       </a>
                   </p>
@@ -57,7 +57,7 @@
         </li>
     </ul>
     <p class='indent'>
-        <a class="btn btn-primary" target="new" href="http://www.ox.ac.uk">More Talks
+        <a class="btn btn-primary" target="new" href="http://new.talks.ox.ac.uk">More Talks
         </a>
     </p>
     <div class="waiting" tal:condition="not: view/currententries">Waiting for Oxford Talks</div>
