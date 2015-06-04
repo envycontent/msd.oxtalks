@@ -102,6 +102,7 @@ class oxtalksCollection(BrowserView):
                     series = ""
                 talk_id = x.get('slug','')
                 talk_link = 'http://new.talks.ox.ac.uk/talks/id/%s' % talk_id
+                talk_ics = 'http://new.talks.ox.ac.uk/api/talks/%s.ics' % talk_id
                 speakers_list = []
                 speaker = ''
                 
@@ -136,7 +137,8 @@ class oxtalksCollection(BrowserView):
                     'fm_startday': fm_startday,
                     'fm_startmonth': fm_startmonth,
                     'fm_endtime': fm_endtime,
-                    'talk_link': talk_link,})
+                    'talk_link': talk_link,
+                    'talk_ics': talk_ics,})
                 
                             
                             

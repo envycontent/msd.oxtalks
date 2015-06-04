@@ -42,7 +42,7 @@
     allowed_interface=".oxtalksview.IoxtalksView"
     permission="zope.Public"
   />
-  
+    
   <browser:page
     for="msd.oxtalks.interfaces.IOxfordTalksCollection"
     name="new_haiku_whatson"

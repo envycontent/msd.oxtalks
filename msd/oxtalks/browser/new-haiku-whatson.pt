@@ -33,7 +33,7 @@
                       </div>
                       <div class="col-xs-2 text-right">
                         <span>
-                          <a href="" title="Add this talk to your calendar">
+                          <a tal:attributes='href entry/talk_ics' title="Add this talk to your calendar">
                              <i class="glyphicon-calendar icon-sm"></i>
                           </a>
                         </span>
