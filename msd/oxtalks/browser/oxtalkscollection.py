@@ -80,7 +80,6 @@ class oxtalksCollection(BrowserView):
            for talk in talksfeed['_embedded']['talks']:
                
                talk_start_date = datetime.strptime(talk['start'],'%Y-%m-%dT%H:%M:%SZ')
-               talk_end_date = datetime.strptime(talk['end'],'%Y-%m-%dT%H:%M:%SZ')
         
                if start_date < talk_start_date < end_date:
                    results_set.append(talk)

@@ -51,6 +51,14 @@
     allowed_interface=".oxtalkscollection.IoxtalksCollection"
     permission="zope.Public"
   />
+
+  <browser:page
+    for="msd.oxtalks.interfaces.IOxfordTalksCollection"
+    name="new_oxford_talks_list"
+    class=".oxtalkscollection.oxtalksCollection"
+    allowed_interface=".oxtalkscollection.IoxtalksCollection"
+    permission="zope.Public"
+  />
   
   
   <browser:page
