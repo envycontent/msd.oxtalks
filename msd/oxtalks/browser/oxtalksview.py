@@ -84,7 +84,7 @@ class oxtalksView(BrowserView):
                     venue = ""
                 if x.get('series'):
                     series_array = x.get('series','')
-                    series = place_array.get('name','')
+                    series = series_array.get('name','')
                 else:
                     series = ""
                 talk_id = x.get('id','')
